@@ -8,11 +8,11 @@ import { RouterView } from "vue-router";
       <div class="w-full flex flex-row justify-between items-baseline py-3">
         <h3>
           <router-link class="underline" :to="{ name: 'home' }">
-            <b class="ms-2 text-xl">
+            <b class="ms-2 text-2xl">
               <span>yanke's utilities</span>
             </b>
           </router-link>
-          <span v-if="selected !== '_none'" class="text-xl">
+          <span v-if="selected !== '_none'" class="text-2xl">
             :: <small>{{ $route.meta.title }}</small></span
           >
         </h3>
@@ -29,9 +29,9 @@ import { RouterView } from "vue-router";
     <template v-else>
       <!-- Home -->
       <div class="w-full flex flex-col items-center pt-32">
-        <h2 class="text-3xl my-4">
-          <span>yanke's utilities</span>
-        </h2>
+        <h1 class="text-4xl my-4">
+          <b>yanke's utilities</b>
+        </h1>
       </div>
     </template>
 
@@ -70,13 +70,16 @@ import { RouterView } from "vue-router";
     <div
       class="w-full flex flex-col justify-center items-center py-4 text-sm text-gray-700"
     >
-      <p>
+      <p class="mb-2">
         This website does not include any third party links, thus it is safe to
         use cryptography utilities.
       </p>
       <p>
-        If you encounter any problems, please
-        <a class="underline" href="https://github.com/guoykxyz/utils.guoyk.xyz/issues"
+        If you encounter any problems, feel free to
+        <a
+          class="underline"
+          target="_blank"
+          href="https://github.com/guoykxyz/utils.guoyk.xyz/issues"
           >create a issue</a
         >
       </p>
