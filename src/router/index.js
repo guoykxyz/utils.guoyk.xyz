@@ -9,7 +9,7 @@ const router = createRouter({
       name: "home",
       component: ViewHome,
       meta: {
-        title: "y.k.'s utilities",
+        title: "guoyk::utils",
       },
     },
     {
