@@ -9,7 +9,7 @@ import { RouterView } from "vue-router";
         <h3>
           <router-link class="underline" :to="{ name: 'home' }">
             <b class="ms-2 text-2xl">
-              <span>yanke's utilities</span>
+              <span>guoyk::utils</span>
             </b>
           </router-link>
           <span v-if="selected !== '_none'" class="text-2xl">
@@ -30,7 +30,7 @@ import { RouterView } from "vue-router";
       <!-- Home -->
       <div class="w-full flex flex-col items-center pt-32">
         <h1 class="text-4xl my-4">
-          <b>yanke's utilities</b>
+          <b>guoyk::utils</b>
         </h1>
       </div>
     </template>
