@@ -3,26 +3,27 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col px-4">
     <template v-if="selected !== '_none'">
-      <div class="w-full flex flex-row justify-between items-baseline py-3">
-        <h3>
+      <div
+        class="w-full flex flex-col lg:flex-row justify-between items-center lg:items-baseline py-3"
+      >
+        <h4>
           <router-link class="underline" :to="{ name: 'home' }">
             <b class="ms-2 text-2xl">
-              <span>guoyk::utils</span>
+              <span>yk::utilities</span>
             </b>
           </router-link>
-          <span v-if="selected !== '_none'" class="text-2xl">
-            :: <small>{{ $route.meta.title }}</small></span
-          >
-        </h3>
-        <select id="main-select" class="form-select" v-model="selected">
-          <option value="_none">choose an utility</option>
-          <template v-for="item in items" v-bind:key="item.name">
-            <option v-if="item.isGroup" disabled>{{ item.name }}</option>
-            <option v-else :value="item.routeName">{{ item.name }}</option>
-          </template>
-        </select>
+        </h4>
+        <div class="mt-3 lg:mt-0">
+          <select id="main-select" class="form-select" v-model="selected">
+            <option value="_none">choose an utility</option>
+            <template v-for="item in items" v-bind:key="item.name">
+              <option v-if="item.isGroup" disabled>{{ item.name }}</option>
+              <option v-else :value="item.routeName">{{ item.name }}</option>
+            </template>
+          </select>
+        </div>
       </div>
     </template>
 
@@ -30,7 +31,7 @@ import { RouterView } from "vue-router";
       <!-- Home -->
       <div class="w-full flex flex-col items-center pt-32">
         <h1 class="text-4xl my-4">
-          <b>guoyk::utils</b>
+          <b>yk::utilities</b>
         </h1>
       </div>
     </template>
@@ -45,7 +46,7 @@ import { RouterView } from "vue-router";
     </template>
 
     <template v-else>
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-left pl-4">
         <template v-for="item in items" v-bind:key="item.name">
           <h5 v-if="item.isGroup" class="my-2">
             <b>{{ item.name }}</b>
@@ -68,7 +69,7 @@ import { RouterView } from "vue-router";
     </div>
 
     <div
-      class="w-full flex flex-col justify-center items-center py-4 text-sm text-gray-700"
+      class="w-full flex flex-col justify-center items-center py-8 px-4 text-sm text-gray-700"
     >
       <p class="mb-2">
         This website does not include any third party links, thus it is safe to
