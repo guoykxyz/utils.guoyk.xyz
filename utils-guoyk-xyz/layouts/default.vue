@@ -1,10 +1,23 @@
 <script setup lang="ts">
 const items = computed(() => {
-  return useUtilities().map((item) => ({
-    name: item.name,
-    value: item.routeName,
-    disabled: !!item.isGroup,
-  }));
+  const result: Array<{ name: string; value: string; disabled?: boolean }> = [];
+
+  useUtilitiesSummary().forEach((group) => {
+    result.push({
+      name: group.group,
+      value: group.group,
+      disabled: true,
+    });
+
+    group.items.forEach((item) => {
+      result.push({
+        name: group.group + " :: " + item.title,
+        value: item.route.name,
+      });
+    });
+  });
+
+  return result;
 });
 
 const none = "_none";
@@ -27,6 +40,13 @@ watch(selected, () => {
 </script>
 
 <template>
+  <Head>
+    <Title
+      >yk::utilities - {{ route.meta.utilityGroup }} ::
+      {{ route.meta.utilityTitle }}</Title
+    >
+  </Head>
+
   <UContainer>
     <div
       class="w-full flex flex-col lg:flex-row justify-between items-center lg:items-baseline py-3"
@@ -34,6 +54,7 @@ watch(selected, () => {
       <UButton
         :to="{ name: 'index' }"
         variant="link"
+        icon="i-bi-tools"
         size="xl"
         label="yk::utilities"
       ></UButton>
@@ -50,32 +71,16 @@ watch(selected, () => {
     </div>
 
     <div class="w-full mb-4 px-4">
-      <p class="font-semibold text-lg">{{ route.meta.utilityTitle }}</p>
+      <p class="font-semibold text-lg">
+        {{ route.meta.utilityGroup }} :: {{ route.meta.utilityTitle }}
+      </p>
       <p>{{ route.meta.utilityDescription }}</p>
     </div>
 
     <slot></slot>
 
-    <div class="w-full my-5">
-      <hr />
-    </div>
+    <div class="w-full pb-4"></div>
 
-    <div
-      class="w-full flex flex-col justify-center items-center py-8 px-4 text-sm"
-    >
-      <p class="mb-2">
-        This website does not include any third party links, thus cryptography
-        utilities are safe to use.
-      </p>
-      <p>
-        If you encounter any problems, feel free to
-        <a
-          class="underline"
-          target="_blank"
-          href="https://github.com/guoykxyz/utils.guoyk.xyz/issues"
-          >create a issue</a
-        >
-      </p>
-    </div>
+    <Footer></Footer>
   </UContainer>
 </template>

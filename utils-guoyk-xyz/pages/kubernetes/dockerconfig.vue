@@ -2,8 +2,8 @@
 import { Base64 } from "js-base64";
 
 definePageMeta({
-  utilityGroup: "kubernetes",
-  utilityTitle: "kubernetes/dockerconfig",
+  utilityGroup: "Kubernetes",
+  utilityTitle: "Dockerconfig",
   utilityDescription: "Generate a Kubernetes Secret for a Docker registry",
 });
 

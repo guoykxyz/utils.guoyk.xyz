@@ -3,24 +3,33 @@ definePageMeta({
   layout: "fullscreen",
 });
 
-const items = computed(() => useUtilities());
+const summary = computed(() => useUtilitiesSummary());
 </script>
 
 <template>
-  <div class="flex flex-col items-left pl-4">
-    <template v-for="item in items" v-bind:key="item.name">
-      <h5 v-if="item.isGroup" class="my-2">
-        <b>{{ item.name }}</b>
-      </h5>
-      <p class="mb-2" v-else>
+  <Head>
+    <Title>yk::utilities</Title>
+  </Head>
+
+  <div class="flex flex-col items-left pb-4">
+    <div v-for="group of summary" v-bind:key="group.group">
+      <div class="my-4 font-semibold text-xl flex flex-row items-center">
+        <UIcon name="i-bi-folder" class="me-2"></UIcon>
+        <span>{{ group.group }}</span>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
         <ULink
-          class="underline"
-          v-if="!item.isGroup"
-          :to="{ name: item.routeName }"
+          :to="item.route"
+          v-for="item of group.items"
+          class="outline outline-1 rounded-md px-2 py-4 flex flex-col items-center justify-between outline-green-800 hover:bg-green-800 h-40"
         >
-          <span>{{ item.name }}</span>
+          <div class="mb-4 font-semibold">
+            <UIcon name="i-bi-wrench" class="me-2"></UIcon>
+            <span>{{ item.title }}</span>
+          </div>
+          <div class="text-center text-sm">{{ item.desc }}</div>
         </ULink>
-      </p>
-    </template>
+      </div>
+    </div>
   </div>
 </template>

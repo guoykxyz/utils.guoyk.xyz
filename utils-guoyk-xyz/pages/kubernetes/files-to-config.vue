@@ -2,8 +2,8 @@
 import { Base64 } from "js-base64";
 
 definePageMeta({
-  utilityGroup: "kubernetes",
-  utilityTitle: "kubernetes/files-to-config",
+  utilityGroup: "Kubernetes",
+  utilityTitle: "Files to Config",
   utilityDescription: "Generate a Kubernetes ConfigMap or Secret from files",
 });
 

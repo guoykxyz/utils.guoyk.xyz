@@ -1,30 +1,46 @@
-export const useUtilities = () => {
-  const result: Array<{
-    name: string;
-    isGroup?: boolean;
-    routeName?: string;
+export function useUtilitiesSummary() {
+  const results: Array<{
+    group: string;
+    items: Array<{
+      title: string;
+      route: { name: string };
+      desc: string;
+    }>;
   }> = [];
+
+  const groups: Record<
+    string,
+    Array<{ title: string; route: { name: string }; desc: string }>
+  > = {};
+
   const router = useRouter();
-  const groups = new Set<string>();
-  router
-    .getRoutes()
-    .filter((route) => !!route.meta.utilityTitle && !!route.meta.utilityGroup)
-    .forEach((route) => {
-      groups.add(route.meta.utilityGroup as string);
-    });
-  Array.from(groups)
-    .sort()
-    .forEach((group) => {
-      result.push({ name: group, isGroup: true });
-      router
-        .getRoutes()
-        .filter((route) => route.meta.utilityGroup === group)
-        .forEach((route) => {
-          result.push({
-            name: route.meta.utilityTitle as string,
-            routeName: route.name?.toString(),
-          });
-        });
-    });
-  return result;
-};
+
+  router.getRoutes().forEach((route) => {
+    const {
+      utilityGroup,
+      utilityTitle,
+      utilityDescription,
+    }: {
+      utilityGroup?: string;
+      utilityTitle?: string;
+      utilityDescription?: string;
+    } = route.meta as any;
+
+    if (utilityDescription && utilityGroup && utilityTitle) {
+      if (!groups[utilityGroup]) {
+        groups[utilityGroup] = [];
+      }
+      groups[utilityGroup].push({
+        title: utilityTitle,
+        route: { name: route.name?.toString() as string },
+        desc: utilityDescription,
+      });
+    }
+  });
+
+  for (const group of Object.keys(groups)) {
+    results.push({ group, items: groups[group] });
+  }
+
+  return results;
+}
