@@ -5,7 +5,7 @@ import { computed } from "vue";
 definePageMeta({
   utilityGroup: "Shadow",
   utilityTitle: "Decode URL",
-  utilityDescription: "Decode a shadowsocks URL to a JSON object",
+  utilityDescription: "Decode a Shadowsocks URL to a config object",
 });
 
 const textareaPlaceholder =

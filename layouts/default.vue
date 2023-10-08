@@ -42,22 +42,30 @@ watch(selected, () => {
 <template>
   <Head>
     <Title
-      >yk::utilities - {{ route.meta.utilityGroup }} ::
-      {{ route.meta.utilityTitle }}</Title
+      >{{ route.meta.utilityGroup }} :: {{ route.meta.utilityTitle }} -
+      utils.guoyk.xyz</Title
     >
   </Head>
 
   <UContainer>
     <div
-      class="w-full flex flex-col lg:flex-row justify-between items-center lg:items-baseline py-3"
+      class="w-full flex flex-col lg:flex-row justify-between items-center py-3"
     >
-      <UButton
-        :to="{ name: 'index' }"
-        variant="link"
-        icon="i-bi-tools"
-        size="xl"
-        label="yk::utilities"
-      ></UButton>
+      <div class="flex flex-col">
+        <div class="flex flex-row items-center font-semibold text-lg">
+          <UButton
+            :to="{ name: 'index' }"
+            variant="link"
+            icon="i-bi-house"
+          ></UButton>
+          <UIcon name="i-bi-chevron-right" class="me-1"></UIcon>
+          <span
+            >{{ route.meta.utilityGroup }} ::
+            {{ route.meta.utilityTitle }}</span
+          >
+        </div>
+        <div>{{ route.meta.utilityDescription }}</div>
+      </div>
 
       <USelect
         v-model="selected"
@@ -70,16 +78,7 @@ watch(selected, () => {
       <hr />
     </div>
 
-    <div class="w-full mb-4 px-4">
-      <p class="font-semibold text-lg">
-        {{ route.meta.utilityGroup }} :: {{ route.meta.utilityTitle }}
-      </p>
-      <p>{{ route.meta.utilityDescription }}</p>
-    </div>
-
     <slot></slot>
-
-    <div class="w-full pb-4"></div>
 
     <Footer></Footer>
   </UContainer>
