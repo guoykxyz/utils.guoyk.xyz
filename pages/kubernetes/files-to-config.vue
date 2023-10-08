@@ -4,7 +4,8 @@ import { Base64 } from "js-base64";
 definePageMeta({
   utilityGroup: "Kubernetes",
   utilityTitle: "Files to Config",
-  utilityDescription: "Generate a Kubernetes ConfigMap or Secret from files",
+  utilityDescription:
+    "Generate a Kubernetes ConfigMap or Secret from contents of files",
 });
 
 const name = ref("name");

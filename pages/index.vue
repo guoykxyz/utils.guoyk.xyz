@@ -8,7 +8,7 @@ const summary = computed(() => useUtilitiesSummary());
 
 <template>
   <Head>
-    <Title>yk::utilities</Title>
+    <Title>utils.guoyk.xyz</Title>
   </Head>
 
   <div class="flex flex-col items-left pb-4">

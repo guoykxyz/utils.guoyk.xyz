@@ -43,6 +43,7 @@ async function doCopy(s: string) {
       <USelect v-model="format" :options="[formatYAML, formatJSON]"></USelect>
       <UButton
         @click="doCopy(resourceString)"
+        variant="ghost"
         icon="i-bi-copy"
         label="Copy"
       ></UButton>
