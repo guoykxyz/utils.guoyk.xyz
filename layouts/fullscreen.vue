@@ -1,7 +1,7 @@
 <template>
   <UContainer>
     <div class="w-full flex flex-row justify-center items-center pt-24 pb-4">
-      <UIcon name="i-mdi-toolbox-outline" class="text-3xl me-4"></UIcon>
+      <img src="~/assets/img/site-logo.png" class="w-10 h-10 me-4" />
       <span class="text-4xl">utils.guoyk.xyz</span>
     </div>
 
