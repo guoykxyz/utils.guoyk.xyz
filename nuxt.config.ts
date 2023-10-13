@@ -4,6 +4,6 @@ export default defineNuxtConfig({
   ssr: false,
   modules: ["@nuxt/ui"],
   ui: {
-    icons: ["heroicons", "simple-icons", "bi"],
+    icons: ["heroicons", "simple-icons", "mdi"],
   },
 });

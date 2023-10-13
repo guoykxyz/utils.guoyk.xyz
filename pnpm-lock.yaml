@@ -11,9 +11,9 @@ dependencies:
   '@codemirror/theme-one-dark':
     specifier: ^6.1.2
     version: 6.1.2
-  '@iconify-json/bi':
-    specifier: ^1.1.20
-    version: 1.1.20
+  '@iconify-json/mdi':
+    specifier: ^1.1.54
+    version: 1.1.54
   '@iconify-json/simple-icons':
     specifier: ^1.1.73
     version: 1.1.73
@@ -938,14 +938,14 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /@iconify-json/bi@1.1.20:
-    resolution: {integrity: sha512-t3f7mRaCKIOeOIZUq8tNVTkw2nrgF2bzsOhOIm9wkoZbARcWgXmCiZTcqclL3++yxcbAqZqOa+Ky7oj/y5ySew==}
+  /@iconify-json/heroicons@1.1.12:
+    resolution: {integrity: sha512-9tsn/xUU+HX56OngEDRTej4LzVm2qcMVLvEJ+q+1ZJBO4sjMDxycmbHq16HGl1LOeVG21fq4jNZHslVveVCwSQ==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: false
 
-  /@iconify-json/heroicons@1.1.12:
-    resolution: {integrity: sha512-9tsn/xUU+HX56OngEDRTej4LzVm2qcMVLvEJ+q+1ZJBO4sjMDxycmbHq16HGl1LOeVG21fq4jNZHslVveVCwSQ==}
+  /@iconify-json/mdi@1.1.54:
+    resolution: {integrity: sha512-3QAsxte90EalbN2e8J30OqSSZz9qN2x+kmykQwsPahoW2dOtSvj+BR9YdiUd9A5XKk2nuU4UH5Gj/cq6WZ6CzQ==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: false

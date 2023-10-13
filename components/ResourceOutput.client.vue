@@ -44,7 +44,7 @@ async function doCopy(s: string) {
       <UButton
         @click="doCopy(resourceString)"
         variant="ghost"
-        icon="i-bi-copy"
+        icon="i-mdi-content-copy"
         label="Copy"
       ></UButton>
     </div>
