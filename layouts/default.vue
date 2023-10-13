@@ -51,14 +51,15 @@ watch(selected, () => {
     <div
       class="w-full flex flex-col lg:flex-row justify-between items-center py-3"
     >
-      <div class="flex flex-col">
-        <div class="flex flex-row items-center font-semibold text-lg">
+      <div class="flex flex-col mt-2 mb-4">
+        <div class="flex flex-row items-center font-semibold text-xl">
           <UButton
             :to="{ name: 'index' }"
             variant="link"
-            icon="i-bi-house"
+            icon="i-mdi-home"
+            :padded="false"
           ></UButton>
-          <UIcon name="i-bi-chevron-right" class="me-1"></UIcon>
+          <UIcon name="i-mdi-chevron-right" class="me-1"></UIcon>
           <span
             >{{ route.meta.utilityGroup }} ::
             {{ route.meta.utilityTitle }}</span
